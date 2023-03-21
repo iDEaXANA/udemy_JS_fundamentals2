@@ -209,17 +209,77 @@ const currentPopulation = 7900;
 //---------------------------------------------------------------------
 // Looping Backwards and Loops in Loops
 
-const listOfNeighbours = [
-    ['Canada', 'Mexico'],
-    ['Spain'],
-    ['Norway', 'Sweden', 'Russia']
-];
-for (let i = 0; i < listOfNeighbours.length; i++) {
+// const listOfNeighbours = [
+//     ['Canada', 'Mexico'],
+//     ['Spain'],
+//     ['Norway', 'Sweden', 'Russia']
+// ];
+// for (let i = 0; i < listOfNeighbours.length; i++) {
 
-    for (let y = 0; y < listOfNeighbours[i].length; y++) {
-        console.log(`Neighbour: ${listOfNeighbours[i][y]}`);
-    };
-};
+//     for (let y = 0; y < listOfNeighbours[i].length; y++) {
+//         console.log(`Neighbour: ${listOfNeighbours[i][y]}`);
+//     };
+// };
 
 //---------------------------------------------------------------------
 // While Loop
+
+// const populations = [67, 44, 5.5, 10.3];
+// const percentages2 = [];
+// const percentagesOfWorld = function (population) {
+//     return (population / currentPopulation) * 100
+// }
+// let i = 0
+
+// while (percentages2.length < 4) {
+//     percentages2.push(percentagesOfWorld(populations[i]));
+//     i++
+// }
+
+// console.log(percentages2);
+
+// const percentages3 = [];
+//  let i = 0;
+//  while (i < populations.length) {
+//  const perc = percentageOfWorld1(populations[i]);
+//  percentages3.push(perc);
+//  i++;
+//  }
+//  console.log(percentages3);
+
+//---------------------------------------------------------------------
+// Coding Challenge #4
+
+const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+let tips = [];
+let totals = [];
+
+function calcTip(billValue) {
+    if (billValue >= 50 && billValue <= 300) {
+        return billValue * 0.15;
+    } else {
+        return billValue * 0.20;
+    }
+}
+
+for (let i = 0; i < bills.length; i++) {
+    const tip = calcTip(bills[i]); // You don't have to use Let as it creates new replacement every loop
+    tips.push(tip);
+    totals.push(tip + bills[i]);
+}
+
+console.log(tips);
+console.log(totals);
+
+let arr = [4, 5, 7, 3, 10, 2, 1]; //4.571428
+
+function calcAverage(arr) {
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++) {
+        sum += arr[i]
+    }
+    return sum / arr.length;
+}
+console.log(calcAverage(arr)); // 4.571428571428571 CORRECT
+
+
